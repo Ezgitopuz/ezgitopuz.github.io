@@ -1,332 +1,541 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ezgi Topuz Buldanli – PhD Candidate in Operations Research &amp; Logistics, Wageningen University &amp; Research">
-  <title>Ezgi Topuz Buldanli</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+/* ── Reset & base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <!-- ── Navigation ── -->
-  <nav id="navbar">
-    <div class="nav-inner">
-      <a class="nav-name" href="#">Ezgi Topuz Buldanli</a>
-      <button class="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">&#9776;</button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#about"        onclick="closeMenu()">About</a></li>
-        <li><a href="#news"         onclick="closeMenu()">News</a></li>
-        <li><a href="#research"     onclick="closeMenu()">Research</a></li>
-        <li><a href="#publications" onclick="closeMenu()">Publications</a></li>
-        <li><a href="#talks"        onclick="closeMenu()">Talks</a></li>
-        <li><a href="#teaching"     onclick="closeMenu()">Teaching</a></li>
-        <li><a href="#education"    onclick="closeMenu()">Education</a></li>
-        <li><a href="#contact"      onclick="closeMenu()">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+:root {
+  --green:       #4c8c4a;
+  --green-dark:  #3a7038;
+  --green-light: #edf6ed;
+  --text:        #1e1e1e;
+  --muted:       #5a5a5a;
+  --border:      #dde5dd;
+  --max-w:       860px;
+}
 
-  <!-- ── About ── -->
-  <section id="about">
-    <div class="container about-grid">
+html { scroll-behavior: smooth; }
 
-      <div class="about-photo">
-        <img src="assets/img/profile.jpg" alt="Ezgi Topuz Buldanli"
-             onerror="this.style.display='none';document.getElementById('initials').style.display='flex'">
-        <div id="initials" class="initials-placeholder">ET</div>
-      </div>
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 1rem;
+  background: #fff;
+}
 
-      <div class="about-text">
-        <h1>Ezgi Topuz Buldanli</h1>
-        <p class="role">
-          <a href="https://www.wur.nl/en/persons/e-ezgi-topuz-buldanli-msc" target="_blank">
-            PhD Candidate &middot; Operations Research &amp; Logistics
-          </a>
-        </p>
-        <p class="affil">Wageningen University &amp; Research</p>
-        <p class="bio">
-          I am a PhD researcher specializing in agent-based modeling and simulation, with a focus on
-          behavioral dynamics and decision-making in complex systems. My modeling work spans two domains:
-          social dynamics (opinion formation, extremism, and pluralistic ignorance) and logistics systems
-          (freight matching platforms). My current research centers on modeling heterogeneous user decisions
-          in freight matching platforms, examining how individual choices and interactions shape
-          market-level outcomes.
-          <br><br>
-          I am passionate about leveraging computational modeling and behavioral theory to understand
-          how decisions emerge and how system-level outcomes arise from individual interactions. Beyond
-          logistics, my broader interest lies in building adaptive, policy-relevant simulations across
-          socio-economic systems.
-        </p>
-        <div class="cta-links">
-          <a href="assets/cv.pdf" target="_blank" class="btn btn-primary">CV</a>
-          <a href="https://scholar.google.com/citations?user=HP_zLdYAAAAJ&hl=en" target="_blank" class="btn btn-outline">Google Scholar</a>
-          <a href="https://orcid.org/0000-0001-5865-1154" target="_blank" class="btn btn-outline">ORCID</a>
-          <a href="https://www.linkedin.com/in/ezgi-topuz/" target="_blank" class="btn btn-outline">LinkedIn</a>
-        </div>
-      </div>
+a { color: var(--green); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-    </div>
-  </section>
+img { display: block; max-width: 100%; }
 
-  <!-- ── News ── -->
-  <section id="news" class="alt">
-    <div class="container">
-      <h2>News</h2>
-      <div class="news-box">
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
 
-        <div class="news-item">
-          <span class="news-date">Apr 2025</span>
-          <span class="news-text">📌 Book chapter published in <em>Advances in Social Simulation (ESSA 2024)</em>, Springer.</span>
-        </div>
+/* ── Navigation ── */
+#navbar {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+}
 
-        <div class="news-item">
-          <span class="news-date">Nov 2024</span>
-          <span class="news-text">🎉 Started my PhD in the Operations Research and Logistics group at Wageningen University &amp; Research. The <a href="https://www.tudelft.nl/tbm/onderzoek/projecten/fmaas-project" target="_blank">FMaaS Project</a> (Freight Matching as a Service) develops agent-based and optimization models to design efficient, fair, and sustainable digital freight matching platforms.</span>
-        </div>
+.nav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 58px;
+}
 
-      </div>
-    </div>
-  </section>
+.nav-name {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+}
+.nav-name:hover { text-decoration: none; color: var(--green); }
 
-  <!-- ── Research ── -->
-  <section id="research">
-    <div class="container">
-      <h2>Research</h2>
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.4rem;
+}
 
-      <div class="project-card">
-        <p class="project-label">PhD Project</p>
-        <p class="project-title">Freight Matching as a Service (FMaaS)</p>
-        <p class="project-desc">
-          My doctoral research investigates how digital freight matching platforms can be designed to
-          operate efficiently and fairly under heterogeneous user behavior. Using agent-based modeling
-          and behavioral operations research, I examine how individual shipper preferences and decision
-          strategies give rise to market-level outcomes, and what platform design choices can steer
-          these outcomes toward sustainable and commercially viable equilibria.
-        </p>
-        <ul class="rq-list">
-          <li>How do heterogeneous shipper preferences affect platform efficiency and fairness?</li>
-          <li>Under what conditions can freight matching platforms remain economically viable?</li>
-          <li>How can behavioral ABMs capture decision dynamics in freight markets?</li>
-        </ul>
-      </div>
+.nav-links a {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--green); text-decoration: none; }
 
-    </div>
-  </section>
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--text);
+  padding: 0.25rem;
+}
 
-  <!-- ── Publications ── -->
-  <section id="publications" class="alt">
-    <div class="container">
-      <h2>Publications</h2>
+/* ── Sections ── */
+section { padding: 3.5rem 0; }
+.alt { background: var(--green-light); }
 
-      <p class="pub-type-label">Book Chapters</p>
-      <div class="pub-list">
+h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 1.4rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 2px solid var(--green);
+  display: inline-block;
+  letter-spacing: -0.01em;
+}
 
-        <div class="pub-item">
-          <p class="pub-title">The Role of Network Rewiring in Influencing Extremism and Pluralistic Ignorance</p>
-          <p class="pub-authors"><strong>Topuz, E.</strong>, Yücel, G.</p>
-          <p class="pub-venue"><em>Advances in Social Simulation. ESSA 2024.</em> Springer Proceedings in Complexity. Springer, Cham &middot; 2025</p>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1007/978-3-031-91782-0_36" target="_blank" class="tag-link">DOI</a>
-          </div>
-        </div>
+/* ── About ── */
+#about { padding: 4.5rem 0 3.5rem; }
 
-        <div class="pub-item">
-          <p class="pub-title">Analyzing the Emergence and Dynamics of Pluralistic Ignorance with Agent-Based Models</p>
-          <p class="pub-authors"><strong>Topuz, E.</strong>, Yücel, G.</p>
-          <p class="pub-venue"><em>Advances in Social Simulation. ESSA 2023.</em> Springer Proceedings in Complexity. Springer, Cham &middot; 2024</p>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1007/978-3-031-57785-7_32" target="_blank" class="tag-link">DOI</a>
-          </div>
-        </div>
+.about-grid {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1.6rem;
+  align-items: start;
+  justify-content: start;
+}
 
-        <div class="pub-item">
-          <p class="pub-title">An Innovative Digital Maturity Assessment Model for Smart Cities</p>
-          <p class="pub-authors"><strong>Topuz, E.</strong>, Coşkun, Ö., Tütek, Y., Çakır, Ö., Temur, G.T., Sivri, Ç.</p>
-          <p class="pub-venue"><em>Advances in Best-Worst Method. BWM 2021.</em> Lecture Notes in Operations Research. Springer, Cham &middot; 2022</p>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1007/978-3-030-89795-6_10" target="_blank" class="tag-link">DOI</a>
-          </div>
-        </div>
+.about-photo img,
+.initials-placeholder {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 
-      </div>
+.initials-placeholder {
+  display: none;
+  background: var(--green-light);
+  border: 2px solid var(--green);
+  color: var(--green);
+  font-size: 2.2rem;
+  font-weight: 600;
+  align-items: center;
+  justify-content: center;
+}
 
-      <p class="pub-type-label" style="margin-top:2.2rem;">Working Papers</p>
-      <div class="pub-list">
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.2rem;
+}
 
-        <div class="pub-item">
-          <p class="pub-title">Fairness and Viability of Freight Transportation Platform with Heterogeneous Shippers' Preferences</p>
-          <p class="pub-authors"><strong>Topuz, E.</strong> et al.</p>
-          <div class="pub-links">
-            <span class="badge-review">Working Paper</span>
-          </div>
-        </div>
+.role {
+  font-weight: 500;
+  font-size: 1.05rem;
+  margin-bottom: 0.1rem;
+}
+.role a { color: var(--green); }
+.role a:hover { text-decoration: underline; }
 
-        <div class="pub-item">
-          <p class="pub-title">A Systematic Literature Review on the Value of Information in Freight Matching Platforms</p>
-          <p class="pub-authors"><strong>Topuz, E.</strong> et al.</p>
-          <div class="pub-links">
-            <span class="badge-review">Working Paper</span>
-          </div>
-        </div>
+.affil {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.1rem;
+}
 
-      </div>
-    </div>
-  </section>
+.bio {
+  margin-bottom: 1.4rem;
+  color: var(--text);
+}
 
-  <!-- ── Talks ── -->
-  <section id="talks">
-    <div class="container">
-      <h2>Talks &amp; Presentations</h2>
-      <div class="talk-list">
+.cta-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
 
-        <div class="talk-item">
-          <div class="talk-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 15c1.66 0 2.99-1.34 2.99-3L15 6c0-1.66-1.34-3-3-3S9 4.34 9 6v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 15 6.7 12H5c0 3.42 2.72 6.23 6 6.72V21h2v-2.28c3.28-.49 6-3.3 6-6.72h-1.7z"/></svg>
-          </div>
-          <div class="talk-body">
-            <p class="talk-conf">ESSA 2024 &mdash; European Social Simulation Association Annual Conference</p>
-            <p class="talk-title">The Role of Network Rewiring in Influencing Extremism and Pluralistic Ignorance</p>
-          </div>
-        </div>
+.btn {
+  display: inline-block;
+  padding: 0.4rem 1.1rem;
+  border-radius: 5px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.15s;
+  cursor: pointer;
+}
 
-        <div class="talk-item">
-          <div class="talk-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 15c1.66 0 2.99-1.34 2.99-3L15 6c0-1.66-1.34-3-3-3S9 4.34 9 6v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 15 6.7 12H5c0 3.42 2.72 6.23 6 6.72V21h2v-2.28c3.28-.49 6-3.3 6-6.72h-1.7z"/></svg>
-          </div>
-          <div class="talk-body">
-            <p class="talk-conf">ESSA 2023 &mdash; European Social Simulation Association Annual Conference</p>
-            <p class="talk-title">Analyzing the Emergence and Dynamics of Pluralistic Ignorance with Agent-Based Models</p>
-          </div>
-        </div>
+.btn-primary {
+  background: var(--green);
+  color: #fff;
+  border: 1.5px solid var(--green);
+}
+.btn-primary:hover {
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+  text-decoration: none;
+}
 
-      </div>
-    </div>
-  </section>
+.btn-outline {
+  background: transparent;
+  color: var(--green);
+  border: 1.5px solid var(--green);
+}
+.btn-outline:hover {
+  background: var(--green-light);
+  text-decoration: none;
+}
 
-  <!-- ── Teaching ── -->
-  <section id="teaching" class="alt">
-    <div class="container">
-      <h2>Teaching</h2>
+/* ── News ── */
+.news-box {
+  max-height: 320px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  padding: 0.25rem 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--green) transparent;
+}
+.news-box::-webkit-scrollbar { width: 5px; }
+.news-box::-webkit-scrollbar-thumb { background: var(--green); border-radius: 99px; }
 
-      <div class="teach-block">
-        <p class="teach-role"><strong>Teaching Assistant</strong> &middot; May 2026 – Present</p>
-        <p class="teach-place">Wageningen University &amp; Research &middot; Wageningen, Netherlands</p>
-        <ul class="course-list">
-          <li><span class="course-code">FPE10808</span><a href="https://studyhandbook.wur.nl/modules/FPE10808?type=Cursory" target="_blank">Food Production Chains</a></li>
-        </ul>
-      </div>
+.news-item {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.75rem 1.1rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.news-item:last-child { border-bottom: none; }
+.news-item:hover { background: var(--green-light); }
 
-      <div class="teach-block">
-        <p class="teach-role"><strong>Teaching Assistant</strong> &middot; Mar 2022 – Oct 2024</p>
-        <p class="teach-place">Bogazici University &middot; Industrial Engineering Department &middot; Istanbul, Turkey</p>
-        <p class="teach-note">Led weekly tutorial and problem-solving sessions for undergraduate and graduate students; designed course materials and graded assignments, quizzes, and exams.</p>
-        <ul class="course-list">
-          <li><span class="course-code">IE 255</span><a href="https://ie.bogazici.edu.tr/courses/ie-255-probability-industrial-engineers" target="_blank">Probability for Industrial Engineers</a></li>
-          <li><span class="course-code">IE 306</span><a href="https://ie.bogazici.edu.tr/courses/ie-306-systems-simulation" target="_blank">Systems Simulation</a></li>
-          <li><span class="course-code">IE 350</span><a href="https://ie.bogazici.edu.tr/courses/ie-350-systems-science-and-engineering" target="_blank">Systems Science and Engineering</a></li>
-          <li><span class="course-code">IE 550</span><a href="https://ie.bogazici.edu.tr/courses/ie-550-dynamics-socio-economic-systems" target="_blank">Dynamics of Socio-Economic Systems</a></li>
-        </ul>
-      </div>
+.news-date {
+  flex-shrink: 0;
+  background: var(--green);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
 
-    </div>
-  </section>
+.news-text { color: var(--text); }
+.news-text em { color: var(--muted); }
 
-  <!-- ── Education ── -->
-  <section id="education">
-    <div class="container">
-      <h2>Education</h2>
-      <div class="pub-list">
+/* ── Research ── */
+.project-card {
+  border-left: 3px solid var(--green);
+  padding-left: 1.1rem;
+}
 
-        <div class="pub-item">
-          <p class="pub-title">Ph.D. in Operations Research and Logistics</p>
-          <p class="pub-authors">Wageningen University &amp; Research &middot; Wageningen, Netherlands</p>
-          <p class="pub-venue">Nov 2024 – Present &middot; FMaaS Project</p>
-        </div>
+.project-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--green);
+  margin-bottom: 0.25rem;
+}
 
-        <div class="pub-item">
-          <p class="pub-title">M.Sc. in Industrial Engineering</p>
-          <p class="pub-authors">Bogazici University &middot; Istanbul, Turkey</p>
-          <p class="pub-venue">Sept 2020 – Feb 2024 &middot; Thesis: <a href="https://drive.google.com/file/d/1TMlH-9PsEA6IDr6JTnfqWE0p-HnOA-bz/view" target="_blank"><em>Significance of Bounded Confidence in Shaping Pluralistic Ignorance</em></a></p>
-        </div>
+.project-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: var(--text);
+}
 
-        <div class="pub-item">
-          <p class="pub-title">B.Sc. in Management Engineering</p>
-          <p class="pub-authors">Bahcesehir University &middot; Istanbul, Turkey</p>
-          <p class="pub-venue">Sept 2015 – Jun 2020 &middot; Capstone: <em>An Innovative Digital Maturity Assessment Model for Smart Cities</em></p>
-        </div>
+.project-desc {
+  font-size: 0.93rem;
+  color: var(--text);
+  margin-bottom: 0.9rem;
+  line-height: 1.7;
+}
 
-        <div class="pub-item">
-          <p class="pub-title">Erasmus Exchange Program</p>
-          <p class="pub-authors">Universidad de Malaga &middot; Malaga, Spain</p>
-          <p class="pub-venue">Sept 2017 – Feb 2018</p>
-        </div>
+.rq-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
 
-      </div>
-    </div>
-  </section>
+.rq-list li {
+  font-size: 0.88rem;
+  color: var(--muted);
+  padding-left: 1rem;
+  position: relative;
+}
+.rq-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--green);
+}
 
-  <!-- ── Contact ── -->
-  <section id="contact" class="alt">
-    <div class="container">
-      <h2>Contact</h2>
-      <p class="contact-intro">For inquiries, potential collaborations, or to share thoughts, feel free to get in touch.</p>
-      <br>
-      <div class="contact-grid">
+/* ── Publications ── */
+.pub-type-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
 
-        <div class="contact-card">
-          <p class="contact-label">Email</p>
-          <p><a href="mailto:ezgi.topuz@wur.nl">ezgi.topuz@wur.nl</a></p>
-        </div>
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
 
-        <div class="contact-card">
-          <div class="social-icons">
-            <a href="https://scholar.google.com/citations?user=HP_zLdYAAAAJ&hl=en" target="_blank" class="social-btn" aria-label="Google Scholar">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
-            </a>
-            <a href="https://www.linkedin.com/in/ezgi-topuz/" target="_blank" class="social-btn" aria-label="LinkedIn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </a>
-          </div>
-        </div>
+.pub-item {
+  border-left: 3px solid var(--green);
+  padding-left: 1.1rem;
+}
 
-      </div>
-    </div>
-  </section>
+.pub-title {
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+  font-size: 0.98rem;
+}
 
-  <!-- ── Footer ── -->
-  <footer>
-    <div class="container">
-      <p>
-        &copy; <span id="yr"></span>
-        Ezgi Topuz Buldanli &middot;
-        <a href="https://www.wur.nl/en/research-results/chair-groups/social-sciences/operations-research-and-logistics.htm" target="_blank">Operations Research &amp; Logistics</a>,
-        Wageningen University &amp; Research
-      </p>
-    </div>
-  </footer>
+.pub-authors {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-bottom: 0.15rem;
+}
 
-  <script>
-    document.getElementById('yr').textContent = new Date().getFullYear();
+.pub-venue {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
 
-    function toggleMenu() {
-      document.getElementById('nav-links').classList.toggle('open');
-    }
-    function closeMenu() {
-      document.getElementById('nav-links').classList.remove('open');
-    }
+.pub-links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
 
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.id; });
-      navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + current); });
-    });
-  </script>
+.tag-link {
+  font-size: 0.78rem;
+  border: 1px solid var(--green);
+  color: var(--green);
+  padding: 0.1rem 0.55rem;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.15s;
+}
+.tag-link:hover {
+  background: var(--green);
+  color: #fff;
+  text-decoration: none;
+}
 
-</body>
-</html>
+.badge-review {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #7a5c00;
+  background: #fff8e1;
+  border: 1px solid #f0c040;
+  padding: 0.1rem 0.55rem;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+}
+
+/* ── Talks ── */
+.talk-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.talk-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  transition: background 0.15s;
+}
+.talk-item:hover { background: var(--green-light); }
+
+.talk-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--green-light);
+  border: 1.5px solid var(--green);
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.1rem;
+}
+
+.talk-body { flex: 1; }
+
+.talk-conf {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.2rem;
+}
+
+.talk-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* ── Course list ── */
+.course-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.course-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+}
+
+.course-code {
+  flex-shrink: 0;
+  font-weight: 600;
+  color: var(--green);
+  font-size: 0.82rem;
+  min-width: 4.5rem;
+}
+
+/* ── Teaching ── */
+.teach-block { margin-bottom: 2.2rem; }
+.teach-block:last-child { margin-bottom: 0; }
+
+.teach-role {
+  font-size: 0.97rem;
+  margin-bottom: 0.1rem;
+}
+
+.teach-place {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.9rem;
+}
+
+.teach-note {
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin-bottom: 0.9rem;
+}
+
+/* ── Social icons ── */
+.social-icons {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 0.2rem;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1.5px solid var(--green);
+  color: var(--green);
+  transition: all 0.15s;
+}
+.social-btn:hover {
+  background: var(--green);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ── Contact ── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.contact-intro {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.4rem;
+}
+
+.contact-label {
+  font-weight: 600;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--green);
+  margin-bottom: 0.4rem;
+}
+
+/* ── Footer ── */
+footer {
+  background: #1e1e1e;
+  color: #888;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.82rem;
+}
+footer a { color: #aaa; }
+footer a:hover { color: #fff; }
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .cta-links { justify-content: center; }
+
+  .hamburger { display: block; }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 58px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+  }
+  .nav-links.open { display: flex; }
+
+  h1 { font-size: 1.7rem; }
+
+  .talk-item { flex-direction: column; gap: 0.6rem; }
+}
