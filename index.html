@@ -20,7 +20,9 @@
       <ul class="nav-links" id="nav-links">
         <li><a href="#about"        onclick="closeMenu()">About</a></li>
         <li><a href="#news"         onclick="closeMenu()">News</a></li>
+        <li><a href="#research"     onclick="closeMenu()">Research</a></li>
         <li><a href="#publications" onclick="closeMenu()">Publications</a></li>
+        <li><a href="#talks"        onclick="closeMenu()">Talks</a></li>
         <li><a href="#teaching"     onclick="closeMenu()">Teaching</a></li>
         <li><a href="#education"    onclick="closeMenu()">Education</a></li>
         <li><a href="#contact"      onclick="closeMenu()">Contact</a></li>
@@ -48,20 +50,22 @@
         <p class="affil">Wageningen University &amp; Research</p>
         <p class="bio">
           I am a PhD researcher specializing in agent-based modeling and simulation, with a focus on
-          behavioral dynamics and decision-making in complex systems. My research currently centers on
-          modeling heterogeneous user decisions in freight matching platforms, examining how individual
-          choices and interactions shape market-level outcomes.
+          behavioral dynamics and decision-making in complex systems. My modeling work spans two domains:
+          social dynamics (opinion formation, extremism, and pluralistic ignorance) and logistics systems
+          (freight matching platforms). My current research centers on modeling heterogeneous user decisions
+          in freight matching platforms, examining how individual choices and interactions shape
+          market-level outcomes.
           <br><br>
           I am passionate about leveraging computational modeling and behavioral theory to understand
-          how decisions emerge, and how system-level outcomes arise from individual interactions.
-          Beyond logistics, my broader interest lies in modeling human decision-making across
-          socio-economic systems, with the ambition of building adaptive, and policy-relevant simulations.
+          how decisions emerge and how system-level outcomes arise from individual interactions. Beyond
+          logistics, my broader interest lies in building adaptive, policy-relevant simulations across
+          socio-economic systems.
         </p>
         <div class="cta-links">
           <a href="assets/cv.pdf" target="_blank" class="btn btn-primary">CV</a>
           <a href="https://scholar.google.com/citations?user=HP_zLdYAAAAJ&hl=en" target="_blank" class="btn btn-outline">Google Scholar</a>
-          <a href="https://orcid.org/0000-0001-5865-1154"          target="_blank" class="btn btn-outline">ORCID</a>
-          <a href="https://www.linkedin.com/in/ezgi-topuz/"         target="_blank" class="btn btn-outline">LinkedIn</a>
+          <a href="https://orcid.org/0000-0001-5865-1154" target="_blank" class="btn btn-outline">ORCID</a>
+          <a href="https://www.linkedin.com/in/ezgi-topuz/" target="_blank" class="btn btn-outline">LinkedIn</a>
         </div>
       </div>
 
@@ -81,10 +85,35 @@
 
         <div class="news-item">
           <span class="news-date">Nov 2024</span>
-          <span class="news-text">🎉 Started my PhD in Operations Research and Logistics group at Wageningen University &amp; Research. Working on the <a href="https://www.tudelft.nl/tbm/onderzoek/projecten/fmaas-project" target="_blank">FMaaS Project</a>.</span>
+          <span class="news-text">🎉 Started my PhD in the Operations Research and Logistics group at Wageningen University &amp; Research. The <a href="https://www.tudelft.nl/tbm/onderzoek/projecten/fmaas-project" target="_blank">FMaaS Project</a> (Freight Matching as a Service) develops agent-based and optimization models to design efficient, fair, and sustainable digital freight matching platforms.</span>
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- ── Research ── -->
+  <section id="research">
+    <div class="container">
+      <h2>Research</h2>
+
+      <div class="project-card">
+        <p class="project-label">PhD Project</p>
+        <p class="project-title">Freight Matching as a Service (FMaaS)</p>
+        <p class="project-desc">
+          My doctoral research investigates how digital freight matching platforms can be designed to
+          operate efficiently and fairly under heterogeneous user behavior. Using agent-based modeling
+          and behavioral operations research, I examine how individual shipper preferences and decision
+          strategies give rise to market-level outcomes, and what platform design choices can steer
+          these outcomes toward sustainable and commercially viable equilibria.
+        </p>
+        <ul class="rq-list">
+          <li>How do heterogeneous shipper preferences affect platform efficiency and fairness?</li>
+          <li>Under what conditions can freight matching platforms remain economically viable?</li>
+          <li>How can behavioral ABMs capture decision dynamics in freight markets?</li>
+        </ul>
+      </div>
+
     </div>
   </section>
 
@@ -92,6 +121,7 @@
   <section id="publications" class="alt">
     <div class="container">
       <h2>Publications</h2>
+
       <p class="pub-type-label">Book Chapters</p>
       <div class="pub-list">
 
@@ -123,48 +153,90 @@
         </div>
 
       </div>
+
+      <p class="pub-type-label" style="margin-top:2.2rem;">Working Papers</p>
+      <div class="pub-list">
+
+        <div class="pub-item">
+          <p class="pub-title">Fairness and Viability of Freight Transportation Platform with Heterogeneous Shippers' Preferences</p>
+          <p class="pub-authors"><strong>Topuz, E.</strong> et al.</p>
+          <div class="pub-links">
+            <span class="badge-review">Working Paper</span>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <p class="pub-title">A Systematic Literature Review on the Value of Information in Freight Matching Platforms</p>
+          <p class="pub-authors"><strong>Topuz, E.</strong> et al.</p>
+          <div class="pub-links">
+            <span class="badge-review">Working Paper</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Talks ── -->
+  <section id="talks">
+    <div class="container">
+      <h2>Talks &amp; Presentations</h2>
+      <div class="talk-list">
+
+        <div class="talk-item">
+          <div class="talk-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 15c1.66 0 2.99-1.34 2.99-3L15 6c0-1.66-1.34-3-3-3S9 4.34 9 6v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 15 6.7 12H5c0 3.42 2.72 6.23 6 6.72V21h2v-2.28c3.28-.49 6-3.3 6-6.72h-1.7z"/></svg>
+          </div>
+          <div class="talk-body">
+            <p class="talk-conf">ESSA 2024 &mdash; European Social Simulation Association Annual Conference</p>
+            <p class="talk-title">The Role of Network Rewiring in Influencing Extremism and Pluralistic Ignorance</p>
+          </div>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 15c1.66 0 2.99-1.34 2.99-3L15 6c0-1.66-1.34-3-3-3S9 4.34 9 6v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 15 6.7 12H5c0 3.42 2.72 6.23 6 6.72V21h2v-2.28c3.28-.49 6-3.3 6-6.72h-1.7z"/></svg>
+          </div>
+          <div class="talk-body">
+            <p class="talk-conf">ESSA 2023 &mdash; European Social Simulation Association Annual Conference</p>
+            <p class="talk-title">Analyzing the Emergence and Dynamics of Pluralistic Ignorance with Agent-Based Models</p>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
   <!-- ── Teaching ── -->
-  <section id="teaching">
+  <section id="teaching" class="alt">
     <div class="container">
       <h2>Teaching</h2>
 
       <div class="teach-block">
-        <p class="teach-role"><strong>Teaching Assistant</strong> &middot; May 2026 – present</p>
+        <p class="teach-role"><strong>Teaching Assistant</strong> &middot; May 2026 – Present</p>
         <p class="teach-place">Wageningen University &amp; Research &middot; Wageningen, Netherlands</p>
-        <table class="teach-table">
-          <thead><tr><th>Code</th><th>Course</th></tr></thead>
-          <tbody>
-            <tr>
-              <td>FPE10808</td>
-              <td><a href="https://studyhandbook.wur.nl/modules/FPE10808?type=Cursory" target="_blank">Food Production Chains</a></td>
-            </tr>
-          </tbody>
-        </table>
+        <ul class="course-list">
+          <li><span class="course-code">FPE10808</span><a href="https://studyhandbook.wur.nl/modules/FPE10808?type=Cursory" target="_blank">Food Production Chains</a></li>
+        </ul>
       </div>
 
       <div class="teach-block">
         <p class="teach-role"><strong>Teaching Assistant</strong> &middot; Mar 2022 – Oct 2024</p>
         <p class="teach-place">Bogazici University &middot; Industrial Engineering Department &middot; Istanbul, Turkey</p>
-        <p class="teach-note">Prepared and graded assignments and quizzes; administered problem-solving sessions.</p>
-        <table class="teach-table">
-          <thead><tr><th>Code</th><th>Course</th></tr></thead>
-          <tbody>
-            <tr><td>IE 255</td><td><a href="https://ie.bogazici.edu.tr/courses/ie-255-probability-industrial-engineers" target="_blank">Probability for Industrial Engineers</a></td></tr>
-            <tr><td>IE 306</td><td><a href="https://ie.bogazici.edu.tr/courses/ie-306-systems-simulation" target="_blank">Systems Simulation</a></td></tr>
-            <tr><td>IE 350</td><td><a href="https://ie.bogazici.edu.tr/courses/ie-350-systems-science-and-engineering" target="_blank">Systems Science and Engineering</a></td></tr>
-            <tr><td>IE 550</td><td><a href="https://ie.bogazici.edu.tr/courses/ie-550-dynamics-socio-economic-systems" target="_blank">Dynamics of Socio-Economic Systems</a></td></tr>
-          </tbody>
-        </table>
+        <p class="teach-note">Led weekly tutorial and problem-solving sessions for undergraduate and graduate students; designed course materials and graded assignments, quizzes, and exams.</p>
+        <ul class="course-list">
+          <li><span class="course-code">IE 255</span><a href="https://ie.bogazici.edu.tr/courses/ie-255-probability-industrial-engineers" target="_blank">Probability for Industrial Engineers</a></li>
+          <li><span class="course-code">IE 306</span><a href="https://ie.bogazici.edu.tr/courses/ie-306-systems-simulation" target="_blank">Systems Simulation</a></li>
+          <li><span class="course-code">IE 350</span><a href="https://ie.bogazici.edu.tr/courses/ie-350-systems-science-and-engineering" target="_blank">Systems Science and Engineering</a></li>
+          <li><span class="course-code">IE 550</span><a href="https://ie.bogazici.edu.tr/courses/ie-550-dynamics-socio-economic-systems" target="_blank">Dynamics of Socio-Economic Systems</a></li>
+        </ul>
       </div>
 
     </div>
   </section>
 
   <!-- ── Education ── -->
-  <section id="education" class="alt">
+  <section id="education">
     <div class="container">
       <h2>Education</h2>
       <div class="pub-list">
@@ -172,7 +244,7 @@
         <div class="pub-item">
           <p class="pub-title">Ph.D. in Operations Research and Logistics</p>
           <p class="pub-authors">Wageningen University &amp; Research &middot; Wageningen, Netherlands</p>
-          <p class="pub-venue">Nov 2024 – present &middot; FMaaS Project</p>
+          <p class="pub-venue">Nov 2024 – Present &middot; FMaaS Project</p>
         </div>
 
         <div class="pub-item">
@@ -198,10 +270,11 @@
   </section>
 
   <!-- ── Contact ── -->
-  <section id="contact">
+  <section id="contact" class="alt">
     <div class="container">
       <h2>Contact</h2>
       <p class="contact-intro">For inquiries, potential collaborations, or to share thoughts, feel free to get in touch.</p>
+      <br>
       <div class="contact-grid">
 
         <div class="contact-card">
@@ -210,12 +283,14 @@
         </div>
 
         <div class="contact-card">
-          <p class="contact-label">Online</p>
-          <p>
-            <a href="https://scholar.google.com/citations?user=HP_zLdYAAAAJ&hl=en" target="_blank">Google Scholar</a><br>
-            <a href="https://www.linkedin.com/in/ezgi-topuz/" target="_blank">LinkedIn</a><br>
-            <a href="https://www.tudelft.nl/tbm/onderzoek/projecten/fmaas-project" target="_blank">FMaaS Project</a>
-          </p>
+          <div class="social-icons">
+            <a href="https://scholar.google.com/citations?user=HP_zLdYAAAAJ&hl=en" target="_blank" class="social-btn" aria-label="Google Scholar">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/ezgi-topuz/" target="_blank" class="social-btn" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
         </div>
 
       </div>
@@ -244,7 +319,6 @@
       document.getElementById('nav-links').classList.remove('open');
     }
 
-    // Scroll-spy
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
     window.addEventListener('scroll', () => {
