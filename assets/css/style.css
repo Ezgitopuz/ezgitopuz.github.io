@@ -498,6 +498,29 @@ h1 {
   margin-bottom: 0.4rem;
 }
 
+/* ── Keywords ── */
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.3rem;
+}
+
+.kw-tag {
+  font-size: 0.78rem;
+  background: var(--green-light);
+  color: var(--green-dark);
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.7rem;
+  border-radius: 99px;
+  font-weight: 500;
+}
+
+/* ── Section divider ── */
+.divider-top {
+  border-top: 1px solid var(--border);
+}
+
 /* ── Footer ── */
 footer {
   background: #1e1e1e;
